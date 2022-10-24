@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #404040;
+  font-size: 1rem;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  margin: 1em 0;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url(../images/dark-ribs.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: gray;
+  padding: 0 0.25em 1em;
+  background-blend-mode: multiply;
+  transition: background-image 250ms, background-color 250ms;
+  /* 1:08:39 */
+}
+.banner:hover {
+  background-image: url(../images/ribs.jpg);
+  background-color: #404040;
+  background-blend-mode: multiply;
+}
+.banner .bannerLittleText {
+  margin: 0;
+  border-top: 5px solid;
+  border-image: linear-gradient(
+      90deg,
+      rgba(255, 113, 59, 1) 30%,
+      rgba(255, 165, 29, 1) 50%
+    )
+    1;
+  color: #f18119;
+}
+.banner .bannerTitle {
+  color: white;
+  text-align: center;
+  margin: 2em 0;
+  font-weight: 300;
+  top: 50%;
+  font-size: 2.25rem;
+}
+.banner .bannerText {
+  color: #f18119;
+  font-weight: bold;
+  font-size: 1.3125rem;
+}
+form {
+  width: 100%;
+}
+.formContainer {
+  text-align: center;
+  padding: 0 1em;
+}
+.formContainer .formTitle {
+  font-weight: bold;
+  font-size: 1.3125rem;
+  color: #404040;
+  margin-bottom: 0;
+}
+.formContainer .formSubtitle {
+  margin-top: 0;
+  color: #f18119;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.formContainer .formDesc {
+  font-weight: lighter;
+}
+
+.formContainer .fromInput {
+  transform: scale(1);
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: 1px solid #404040;
+  padding: 0.5em;
+  text-align: center;
+  transition: transform 250ms, color 250ms;
+}
+.formContainer .fromInput:hover,
+.formContainer .fromInput:focus {
+  transform: scale(1.1);
+  border: 1px solid #f18119;
+}
+.formContainer .formButton {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 113, 59, 1) 0%,
+    rgba(255, 165, 29, 1) 50%
+  );
+  color: white;
+  padding: 1em;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 0.625rem;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 250ms;
+}
+.formContainer .formButton:hover,
+.formContainer .formButton:focus {
+  transform: scale(1.1);
+}
+.formContainer .buttunSubtitle {
+  font-size: 0.625rem;
+}
+.banner * {
+  max-width: 400px;
+}
+.formContainer * {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 868px) {
+  body {
+    font-size: 1.125rem;
+  }
+  h1 {
+    font-size: 3.5rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  main {
+    flex-direction: row;
+  }
+  .banner {
+    width: 50%;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+  }
+  .banner .bannerTitle {
+    margin: 0;
+  }
+  .banner .bannerLittleText {
+    position: absolute;
+    top: 0;
+  }
+  .formContainer {
+    width: 50%;
+    margin: auto 0;
+  }
+}
+
+/* 
+body{
+    -margin: 0;-
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #404040;
+    font-size: 1rem;
+    -text-align: center;- (with doing this we won't have to give this style to everything!)
+
+}
+-h1{
+    font-size: 2.25rem;
+    font-weight:300;
+}-
+-h1 + p (در اینجا + یعنی اگر پاراگراف دقیقا بعد از اچ1 بود آن را تغییر بده و اگر چیز دیگری باشد بر هیچ چیزی تغییری حاصل نمیشود){
+color: #f18119;
+font-weight: 900;
+font-size: 1.3125rem;
+}-
+-h2{
+    font-size: 1.3125rem; (for H2's that we built)
+}-
+*we make the H1 Tag light, put the bold text in strong (not span) and make the strong tag bold*
+-strong{
+    font-weight:700;
+}-
+main {
+  display: flex;
+  flex-direction: column;
+}
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  background-image: url(../images/ribs.jpg);
+  background-color: #404040; (میتوانیم رنگِ بک گراند اضافه کنیم تا در صورتِ لود نشدنِ عکس جایگزینِ آن شود)
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, .5);
+  height: 50vh;
+  
+}
+.banner .bannerLittleText {
+    color: #f18119;
+  border-top: 2px solid red;
+  margin-top: 0;
+  -font-size:.625rem-
+  -order: -1;-
+}
+.banner .bannerTitle {
+    order: ;
+    color: white;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+}
+.banner .bannerText {
+    color: #f18119;
+    
+}
+.formContainer {
+    text-align: center;
+}
+.formContainer .formTitle {
+    font-weight: bold;
+    font-size: 1.3125rem;
+    color: #404040;
+    margin-bottom: 0;
+}
+.formContainer .formSubtitle {
+    margin-top: 0;
+    color: #f18119;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.formContainer .formDesc {
+    font-weight: lighter;
+}
+.formContainer .fromInput {
+}
+.formContainer .fromInput {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid #404040;
+    padding: .5em;
+    text-align: center;
+}
+.formContainer .formButton {
+    display: block;
+    width: 55%;
+    margin: 0 auto;
+    border: none;
+    background: linear-gradient(90deg, rgba(255,113,59,1) 0%, rgba(255,165,29,1) 50%);
+    color: white;
+    padding: 1em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size:.625rem;
+}
+.formContainer .buttunSubtitle {
+    font-size: .625rem;
+    -letter spacing: 1px;-
+}
+ */
