@@ -1,25 +1,16 @@
-const miForm = document.getElementById('email-collector'),
-    nameInput = document.getElementById('name'),
-    emailInput = document.getElementById('email');
+let emailCollector = document.getElementById('emailCollector')
+emailCollector.addEventListener('submit', event => {
+  event.preventDefault()
 
-miForm.addEventListener('submit', handleForm);
+  let ourFormData = new FormData(event.target)
+  let userFirstName = ourFormData.get('firstName')
+  let updateHtmlContent = `            <h2 class="formTitle">Congratulations, ${userFirstName}!</h2>
+  <p class="formSubtitle">register today</p>
+  <p class="formDesc">
+    You're on your way to becoming a BBQ master!
 
-function handleForm(event) {
-  event.preventDefault();
-  let nameUser = nameInput.value,
-      emailUser = emailInput.value;
-
-  displayMessage(nameUser, emailUser);
-}
-
-function displayMessage(name, userEmailAddress) {
-
-  const title = document.querySelector('.main-content h2'),
-      subtitle = document.querySelector('.main-content h3'),
-      description = document.querySelector('.description');
-
-  title.textContent = `Congratulations, ${name}`;
-  subtitle.textContent = 'You\'re on your way to becoming a BBQ Master!';
-  description.textContent = `You will get weekly BBQ tips sent to: ${userEmailAddress}`;
-  miForm.style.display = 'none';
-}
+  </p>
+`
+let ourMainContent = document.getElementById('mainContent')
+ourMainContent.innerHTML = updateHtmlContent
+})
